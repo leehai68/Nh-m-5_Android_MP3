@@ -23,7 +23,7 @@ package hteam.mp3playback;
         import android.util.Log;
         import android.view.View;
         import android.view.View.OnClickListener;
-        import android.widget.EditText;
+
         import android.widget.ImageView;
         import android.widget.SeekBar;
         import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -42,7 +42,7 @@ public class PlayerService extends Service implements OnCompletionListener,
     private WeakReference<TextView> songTotalDurationLabel;
     private WeakReference<ImageView> btnNext,btnPrevious;
     private WeakReference<TextView> nameSong;
-    private WeakReference<EditText> linkFileEdt;
+    private WeakReference<TextView> linkFileEdt;
     private WeakReference<ImageView> img;
     public static MediaPlayer mp;
     //Xử lý việc cập nhật giao diện (thời gian và progress bar ...)
@@ -201,7 +201,7 @@ public class PlayerService extends Service implements OnCompletionListener,
         songProgressBar = new WeakReference<SeekBar>(MainActivity.songProgressBar);
         songProgressBar.get().setOnSeekBarChangeListener(this);
         nameSong=new WeakReference<TextView>(MainActivity.nameSong);
-        linkFileEdt=new WeakReference<EditText>(MainActivity.linkFileEdt);
+        linkFileEdt=new WeakReference<TextView>(MainActivity.linkFileEdt);
         img=new WeakReference<ImageView>(MainActivity.img);
     }
     //Gửi tin nhắn tới MainActivity rằng bài hát đã được lưu vào vùng nhớ đệm
