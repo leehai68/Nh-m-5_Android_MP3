@@ -26,6 +26,7 @@ package hteam.mp3playback;
 
 
 public class MainActivity extends Activity implements OnClickListener {
+
     public static final String ACTION_PLAY="MY_ACTION_PLAY";
     public static final String ACTION_PAUSE="MY_ACTION_PAUSE";
     public String MUSIC_LINK;
