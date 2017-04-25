@@ -30,14 +30,14 @@
             android:layout_weight="0.21"
             android:gravity="center"/>
 
-        <EditText
+        <TextView
             android:id="@+id/linkfile_edt"
             android:layout_width="240dp"
             android:layout_height="match_parent"
 
             android:layout_weight="1.00"
             android:ems="10"
-            android:maxLines="1"></EditText>
+            android:maxLines="1"/>
 
     </LinearLayout>
 

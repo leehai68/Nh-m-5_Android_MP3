@@ -13,7 +13,6 @@ package hteam.mp3playback;
 
         import android.view.View;
         import android.view.View.OnClickListener;
-        import android.widget.EditText;
         import android.widget.ImageView;
         import android.widget.SeekBar;
         import android.widget.TextView;
@@ -36,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
     public static SeekBar songProgressBar;
     public static TextView songCurrentDurationLabel, songTotalDurationLabel;
     public static TextView nameSong;
-    public static EditText linkFileEdt;
+    public static TextView linkFileEdt;
     private Intent playerService;
     public static ImageView img;
     private final String URL="http://mp3.zing.vn/album/Nhac-Viet-Moi-Thang-03-2017/ZOZ0WFDO.html";
@@ -94,7 +93,7 @@ public class MainActivity extends Activity implements OnClickListener {
         songProgressBar.setOnClickListener(this);
         songCurrentDurationLabel.setOnClickListener(this);
         songTotalDurationLabel.setOnClickListener(this);
-        linkFileEdt = (EditText) findViewById(R.id.linkfile_edt);
+        linkFileEdt = (TextView) findViewById(R.id.linkfile_edt);
         nameSong=(TextView) findViewById(R.id.name);
         img=(ImageView) findViewById(R.id.imgCover);
     }
