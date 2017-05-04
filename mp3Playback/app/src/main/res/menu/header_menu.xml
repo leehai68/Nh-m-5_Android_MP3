@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/lists_songs"
+        android:icon="@drawable/ipod_icon"
+        android:title="List Songs"
+        android:visible="false"
+        app:showAsAction="always"></item>
+</menu>
