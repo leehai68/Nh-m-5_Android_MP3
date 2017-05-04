@@ -70,6 +70,7 @@ public class PickMusicFragment extends ListFragment
         Bundle e=new Bundle();
         e.putSerializable("PICKMUSIC",pick_music);
         e.putInt("POS",position);
+        e.putInt("offline",0);
         intent.putExtras(e);
         startActivity(intent);
 

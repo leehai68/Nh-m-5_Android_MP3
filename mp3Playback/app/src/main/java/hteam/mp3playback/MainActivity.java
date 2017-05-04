@@ -11,6 +11,7 @@ package hteam.mp3playback;
         import android.content.Intent;
         import android.content.IntentFilter;
 
+        import android.util.Log;
         import android.view.View;
         import android.view.View.OnClickListener;
         import android.widget.ImageView;
@@ -19,12 +20,15 @@ package hteam.mp3playback;
 
         import com.squareup.picasso.Picasso;
 
+        import java.util.ArrayList;
         import java.util.concurrent.ExecutionException;
 
         import hteam.model.ZingMp3;
+        import hteam.offline.SongModel;
 
 
 public class MainActivity extends Activity implements OnClickListener {
+
     public static final String ACTION_PLAY="MY_ACTION_PLAY";
     public static final String ACTION_PAUSE="MY_ACTION_PAUSE";
     public String MUSIC_LINK;
@@ -42,19 +46,43 @@ public class MainActivity extends Activity implements OnClickListener {
     public static int SumOfPlaylist;
     public static int pos;
     public static ZingMp3 nhac_online;
+    public static ArrayList<SongModel> nhac_offline;
     public static Notification.Builder mBuilder;
+    public static int Offline;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        Intent intent = getIntent();
+//        Bundle b = intent.getBundleExtra("BUNDLE");
+//        Offline = b.getInt("offline");
         Bundle b=getIntent().getExtras();
-        nhac_online= (ZingMp3) b.getSerializable("PICKMUSIC");
-        pos=b.getInt("POS");
-        SumOfPlaylist=nhac_online.getData().size();
-        MUSIC_LINK=nhac_online.getData().get(pos).getSource_list().get(0);
-        artist=nhac_online.getData().get(pos).getArtist();
-        name=nhac_online.getData().get(pos).getName();
-        urlCover=nhac_online.getData().get(pos).getCover();
+        Offline = b.getInt("offline");
+        Log.e("Nghe Nhac Offline",String.valueOf(Offline));
+        if (Offline == 1)
+        {
+           // Bundle b = b1;
+            nhac_offline= (ArrayList<SongModel>) b.getSerializable("SongArray");
+            pos=b.getInt("id");
+            SumOfPlaylist=nhac_offline.size();
+            MUSIC_LINK=nhac_offline.get(pos).Path;
+            artist=null;
+            name=nhac_offline.get(pos).Name;
+            urlCover=null;
+        }
+    //    else {
+            //Bundle b = b2;
+//            Bundle b=getIntent().getExtras();
+            nhac_online= (ZingMp3) b.getSerializable("PICKMUSIC");
+            pos=b.getInt("POS");
+            SumOfPlaylist=nhac_online.getData().size();
+            MUSIC_LINK=nhac_online.getData().get(pos).getSource_list().get(0);
+            artist=nhac_online.getData().get(pos).getArtist();
+            name=nhac_online.getData().get(pos).getName();
+            urlCover=nhac_online.getData().get(pos).getCover();
+      //  }
+
 //        parseJSON a=new parseJSON();
 //        a.execute(URL);
 //        try {
