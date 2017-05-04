@@ -34,13 +34,13 @@ public class SubjectScreen extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        Button btn1=(Button) findViewById(R.id.btnGoToScreen2);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(SubjectScreen.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button btn1=(Button) findViewById(R.id.btnGoToScreen2);
+//        btn1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(SubjectScreen.this,MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

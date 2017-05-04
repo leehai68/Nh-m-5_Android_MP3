@@ -61,6 +61,8 @@ public class PlaylistFragment extends ListFragment {
         ft.commit();
         ((abc) getActivity()).addFragment(ab);
         Toast.makeText(getActivity(),m.get(position).getUrl_playlist().toString(),Toast.LENGTH_SHORT).show();
+
+
     }
 
 
